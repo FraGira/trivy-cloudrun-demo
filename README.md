@@ -1,7 +1,4 @@
 # Trivy Cloud Run Demo
-
-![Docker and Trivy](https://example.com/docker-trivy-image.png)
-
 This repository demonstrates how to set up a CI/CD pipeline using **GitHub Actions** to:
 1. **Scan Docker images** for vulnerabilities using **Trivy**.
 2. Automatically **deploy the image** to **Google Cloud Run** if no critical vulnerabilities are found.
@@ -69,15 +66,11 @@ This demo shows a practical implementation of continuous integration and deploym
 2. **Check the deployment**:
    Once the workflow completes, your app will be available at the URL provided by Google Cloud Run.
 
-![Cloud Run Deployment](https://example.com/cloud-run-url.png)
-
 ## Screenshots
 
 ### Trivy Scan Output:
-![Trivy Scan Output](https://example.com/trivy-output.png)
 
 ### Cloud Run Deployment Result:
-![Cloud Run Deployment](https://example.com/cloud-run-result.png)
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
