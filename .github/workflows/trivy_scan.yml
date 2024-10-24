@@ -31,7 +31,7 @@ jobs:
         with:
           image-ref: 'flask-app:ci'
           #format: 'table'
-          #severity: "HIGH,CRITICAL"
+          severity: "HIGH,CRITICAL"
           format: sarif # Usa il formato SARIF
           output: trivy-results.sarif # Salva l'output in un file
           exit-code: '0'
