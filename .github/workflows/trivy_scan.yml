@@ -25,7 +25,8 @@ jobs:
         uses: aquasecurity/trivy-action@0.20.0
         with:
           image-ref: 'flask-app:ci'
-          format: 'table'
+          #format: 'table'
+          format: 'sarif'
           exit-code: '0'
           severity: "HIGH,CRITICAL"
           output: 'trivy-results.sarif'
