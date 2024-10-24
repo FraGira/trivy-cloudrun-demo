@@ -41,4 +41,3 @@ jobs:
         with:
           sarif_file: 'trivy-results.sarif' # Specifica il file SARIF da caricare
 
-#test
