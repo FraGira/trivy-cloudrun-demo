@@ -1,5 +1,7 @@
 name: Continuous Security Scanning with Trivy
-permission: write-all
+
+permissions: write-all
+
 on:
   push:
     branches:
