@@ -12,6 +12,10 @@ on:
 jobs:
   security_scan:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permesso di scrittura per i contenuti
+      security-events: write  # Permesso per caricare eventi di sicurezza
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
