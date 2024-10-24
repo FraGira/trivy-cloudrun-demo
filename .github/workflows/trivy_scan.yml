@@ -27,7 +27,7 @@ jobs:
         run: docker build -t flask-app:ci .
 
       - name: Run Trivy Securtiy Scan
-        uses: aquasecurity/trivy-action@0.20.0
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'flask-app:ci'
           #format: 'table'
