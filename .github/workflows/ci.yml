@@ -1,0 +1,36 @@
+name: Flask CI
+
+on:   
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker image
+        run: docker build . -t flask-app:ci
+
+      - name: Run container
+        run: |
+          docker run -d --name flask-app-container -p 5000:5000 flask-app:ci
+      
+      - name: wait for container to be ready
+        run: sleep 10
+
+      - name: View container Logs
+        run: docker logs flask-app-container
+
+      - name: Run Flask Tests
+        run: |
+          docker exec flask-app-container sh -c "PYTHONPATH=/app pytest -v /app/tests/"
