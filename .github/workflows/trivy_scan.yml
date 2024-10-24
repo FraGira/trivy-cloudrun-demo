@@ -38,5 +38,5 @@ jobs:
         with:
           sarif_file: trivy-results.sarif # Specifica il file SARIF da caricare
         env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
   
