@@ -7,9 +7,7 @@ on:
   pull_request:
     branches:
       - main
-permissions:
-  contents: read
-  security-events: write
+
 
 jobs:
   security_scan:
@@ -39,4 +37,6 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: trivy-results.sarif # Specifica il file SARIF da caricare
+        env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
   
